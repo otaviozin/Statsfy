@@ -28,10 +28,11 @@ export default NextAuth({
 		SpotifyProvider({
 			authorization:
 			`https://accounts.spotify.com/authorize?scope=${scopes}`,
-			clientId: process.env.SPOTIFY_CLIENT_ID,
-			clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
+			clientId: process.env.NEXT_PUBLIC_CLIENT_ID,
+			clientSecret: process.env.NEXT_PUBLIC_CLIENT_SECRET,
 		}),
 	],
+	secret: process.env.JWT_SECRET,
 	callbacks: {
 		async jwt({token, account}){
 			if (account) {
