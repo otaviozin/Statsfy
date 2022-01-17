@@ -24,6 +24,9 @@ export default function Navbar(props){
                         <Link href='/userPlaylists'>
                             <a className={Classname + props.userPlaylists}>Playlists</a>
                         </Link>
+                        <Link href='/userRecent'>
+                            <a className={Classname + props.userRecent}>Recent tracks</a>
+                        </Link>
                     </div>
                 </div>
             </div>

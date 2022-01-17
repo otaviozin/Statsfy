@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar/navbar';
+import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -17,6 +18,9 @@ export default function TopTracks(){
 
     return(
         <div>
+            <Head>
+				<title>SpotInfo</title>
+			</Head>
             <Navbar topTracks='active'/>
             <div className='container mt-4'>
                 <h1 className='mb-4'>Your top 15 most listened songs</h1>

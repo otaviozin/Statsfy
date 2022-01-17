@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';  
 import Link from 'next/link';
+import Head from 'next/head';
 import Image from 'next/image';
 import Navbar from '../components/Navbar/navbar';
 
@@ -17,6 +18,9 @@ export default function UserPlaylists(){
 
     return(
         <div>
+            <Head>
+                <title>SpotInfo</title>
+            </Head>
             <Navbar userPlaylists='active'/>
             <div className='container mt-4'>
             <h1 className='mb-4'>Your playlists</h1>
