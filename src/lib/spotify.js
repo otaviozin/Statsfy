@@ -5,8 +5,8 @@ const basic = Buffer.from(`${client_id}:${client_secret}`).toString('base64');
 // Endpoints
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 const PLAYLISTS_ENDPOINT = 'https://api.spotify.com/v1/me/playlists';
-const USERTOPTRACKS_ENDPOINT = 'https://api.spotify.com/v1/me/top/tracks?limit=15';
-const USERTOPARTISTS_ENDPOINT = 'https://api.spotify.com/v1/me/top/artists?limit=15';
+const USERTOPTRACKS_ENDPOINT = 'https://api.spotify.com/v1/me/top/tracks';
+const USERTOPARTISTS_ENDPOINT = 'https://api.spotify.com/v1/me/top/artists';
 const USERRECENTTRACKS_ENDPOINT = 'https://api.spotify.com/v1/me/player/recently-played';
 
 const getAccessToken = async (refresh_token) => {
@@ -29,16 +29,6 @@ const getAccessToken = async (refresh_token) => {
 export const getUsersRecentTracks = async (refresh_token) => {
 	const { access_token } = await getAccessToken(refresh_token);
 	return fetch(USERRECENTTRACKS_ENDPOINT, {
-		headers: {
-			Authorization: `Bearer ${access_token}`,
-		},
-	});
-};
-
-// User's playlists
-export const getUsersPlaylists = async (refresh_token) => {
-	const { access_token } = await getAccessToken(refresh_token);
-	return fetch(PLAYLISTS_ENDPOINT, {
 		headers: {
 			Authorization: `Bearer ${access_token}`,
 		},
