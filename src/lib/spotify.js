@@ -5,7 +5,7 @@ const basic = Buffer.from(`${client_id}:${client_secret}`).toString('base64');
 // Endpoints
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 const USERTOPTRACKS_ENDPOINT = 'https://api.spotify.com/v1/me/top/tracks?time_range=short_term';
-const USERTOPARTISTS_ENDPOINT = 'https://api.spotify.com/v1/me/top/artists';
+const USERTOPARTISTS_ENDPOINT = 'https://api.spotify.com/v1/me/top/artists?time_range=short_term';
 const USERRECENTTRACKS_ENDPOINT = 'https://api.spotify.com/v1/me/player/recently-played';
 
 const getAccessToken = async (refresh_token) => {
