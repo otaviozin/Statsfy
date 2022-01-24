@@ -12,7 +12,7 @@ Site completo em sua primeira versão (beta). Futuramente terá mais novidades.
 Feito com Next.js, Tailwind e Spotify API.
 
 # Atualizações
-- Removido função de vizualisar as playlists.
+- Removido função de visualizar as playlists.
 - Design refeito com Tailwind e tema escuro.
 - Escopos revisados.
 
