@@ -15,9 +15,8 @@ export default function RecentTracks(){
         }
         getRecentTracks();
     }, []);
+    
     return(
-
-
         <div>
             <Navbar />
             <div className='container mx-auto text-center lg:text-left text-slate-300'>
@@ -25,15 +24,15 @@ export default function RecentTracks(){
                 <div className='grid grid-cols-1 text-left'>
                     {recent.map((item) => (
                         <Link key={item.id} href={item.track.external_urls.spotify} passHref >
-                            <div className='bg-zinc-800 hover:bg-zinc-900 outline outline-transparent hover:outline-green-500 p-3 mx-2 my-1 rounded-lg cursor-pointer'>
-                                <div className='grid grid-rows-2 grid-flow-col flex justify-start'>
+                            <div className='bg-zinc-800 hover:bg-zinc-900 outline outline-transparent hover:outline-green-500 p-3 pb-2 mx-2 my-1 rounded-lg cursor-pointer'>
+                                <div className='grid text-sm lg:text-base grid-rows-2 grid-flow-col flex justify-start max-h-24'>
                                     <div className='row-span-2 mt-1'>
-                                        <Image src={item.track.album.images[0].url} priority='true' width={80} height={80} className='rounded-full' alt='...' /> 
+                                        <Image src={item.track.album.images[0].url} priority='true' width={80} height={80} alt='Album image' /> 
                                     </div>
-                                    <div className='col-span-2 ml-8 mt-4'>
+                                    <div className='col-span-1 ml-8 mt-1 lg:mt-4'>
                                         <h1>{item.track.name}</h1>
                                     </div>
-                                    <div className='col-span-2 ml-8'>
+                                    <div className='col-span-1 ml-8 mt-3 lg:mt-0'>
                                         <h1>by {item.track.artists[0].name}</h1>
                                     </div>
                                 </div>
@@ -43,30 +42,5 @@ export default function RecentTracks(){
                 </div>
             </div>
         </div>
-
-
-        // <div>
-        //     <Navbar />
-        //     <div className='container mt-4'>
-        //         <h1 className='mb-4'>Your recently tracks</h1>
-        //         <div className='row'>
-        //             {recent.map((item) => (
-        //                 <div key={item.played_at} className='col-md-6 col-lg-4 mt-lg-5 d-flex justify-content-center mb-4'>
-        //                     <div className='card h-100' style={{width: 288}}>
-        //                         <Image src={item.track.album.images[0].url} priority='true' width={288} height={288} className='card-img-top rounded-top' alt='...' />
-        //                         <div className='card-body'>
-        //                             <h5 className='card-title'>{item.track.name}</h5>
-        //                             <p className='card-text'>by {item.track.artists[0].name}</p>
-        //                             <Link href={item.track.external_urls.spotify}>
-        //                                 <a className='btn btn-success'>Listen on Spotify</a>
-        //                             </Link>
-        //                         </div>
-        //                     </div>
-        //                 </div>
-        //             ))
-        //             }
-        //         </div>
-        //     </div>
-        // </div>
     );
 }

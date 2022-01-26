@@ -1,5 +1,6 @@
 import { useSession, signIn, signOut } from 'next-auth/react';
 import Navbar from '../components/Navbar';
+import Link from 'next/link';
 
 export default function Home(){
 	const {data: session} = useSession();
@@ -21,12 +22,35 @@ export default function Home(){
 	}
 
 	return(
-		<div className='container lg:mt-40 mt-32 text-white mx-auto text-center'>
-			<div className='grid grid-cols-1'>
-				<h1 className='text-5xl font-bold'>Login with Spotify</h1>
-				<button className='mx-32 lg:mx-auto rounded mt-12 mb-12 bg-green-500 hover:bg-green-700 py-2 px-6' onClick={() => signIn()}>Sign in</button>
-				<p className='text-neutral-400'>Made by Otávio</p>
+		<div className='container lg:mt-12 mt-8 text-white mx-auto text-center'>
+			<h1 className='text-5xl font-bold'>Statsfy</h1>
+			<div className='grid grid-cols-2 text-center mx-4 mt-4'>
+				<div className='col-span-2 lg:col-span-1 lg:text-left'>
+					<h2 className='text-3xl font-bold mt-7'>Required Spotify access</h2>
+					<p className='text-slate-300 mt-4'>The app requires access to your account, but we do not change or save any user data.</p>
+					<h2 className='text-3xl font-bold mt-7'>Scopes</h2>
+					<p className='text-slate-300 mt-4'>Scopes allow the app to use user-specific information. In this app we use the following scopes:</p>
+					<ul className='list-disc ml-12 mt-4 underline text-left'>
+						<Link href='https://developer.spotify.com/documentation/general/guides/authorization/scopes/#user-read-email'>
+							<a><li>user-read-email</li></a>
+						</Link>
+						<Link href='https://developer.spotify.com/documentation/general/guides/authorization/scopes/#user-top-read'>
+							<a><li>user-top-read</li></a>
+						</Link>
+						<Link href='https://developer.spotify.com/documentation/general/guides/authorization/scopes/#user-read-recently-played'>
+							<a><li>user-read-recently-played</li></a>
+						</Link>
+					</ul>
+					<Link href='https://developer.spotify.com/documentation/general/guides/authorization/scopes/'>
+						<a><p className='text-slate-300 mt-4 underline'>Read more about Spotify scopes</p></a>
+					</Link>
+				</div>
+				<div className='col-span-2 lg:col-span-1'>
+					<h2 className='text-3xl font-bold mt-8'>Ready to see your stats? Sign in with Spotify</h2>
+					<button className='rounded mt-8 mb-8 bg-green-500 hover:bg-green-700 py-2 px-6' onClick={() => signIn()}>Sign in</button>
+				</div>
 			</div>
+			<p className='text-neutral-400 mb-8'>Made by Otávio</p>
 		</div>
 	);
 }

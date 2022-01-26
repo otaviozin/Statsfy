@@ -24,9 +24,9 @@ export default function TopArtists(){
                     {artists.map((item) => (
                         <Link key={item.id} href={item.external_urls.spotify} passHref >
                             <div className='bg-zinc-800 hover:bg-zinc-900 outline outline-transparent hover:outline-green-500 p-3 mx-2 my-1 rounded-lg cursor-pointer'>
-                                <div className='grid grid-rows-2 grid-flow-col flex justify-start'>
+                                <div className='grid text-sm lg:text-base grid-rows-2 grid-flow-col flex justify-start'>
                                     <div className='row-span-2 mt-1'>
-                                        <Image src={item.images[0].url} priority='true' width={80} height={80} className='rounded-full' alt='...' /> 
+                                        <Image src={item.images[0].url} priority='true' width={80} height={80} alt='Artist image' /> 
                                     </div>
                                     <div className='col-span-2 row-span-2 ml-8 mt-8'>
                                         <h1>{item.name}</h1>

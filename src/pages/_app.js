@@ -7,7 +7,7 @@ export default function App({Component, pageProps: {session, ...pageProps}}){
 	return(
 		<div>
 			<Head>
-				<title>SpotInfos</title>
+				<title>Statsfy</title>
 			</Head>
 			<SessionProvider session={session}>
 				<Component {...pageProps} />
