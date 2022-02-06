@@ -47,7 +47,7 @@ export default function Home(){
 				</div>
 				<div className='col-span-2 lg:col-span-1'>
 					<h2 className='text-3xl font-bold mt-8'>Ready to see your stats? Sign in with Spotify</h2>
-					<button className='rounded mt-8 mb-8 bg-green-500 hover:bg-green-700 py-2 px-6' onClick={() => signIn()}>Sign in</button>
+					<button className='rounded mt-8 mb-8 bg-green-500 hover:bg-green-700 py-2 px-6' onClick={() => signIn('spotify')}>Sign in</button>
 				</div>
 			</div>
 			<p className='text-neutral-400 mb-8'>Made by Otávio</p>
