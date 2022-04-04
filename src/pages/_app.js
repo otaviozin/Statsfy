@@ -12,7 +12,7 @@ export default function App({Component, pageProps: {session, ...pageProps}}){
 			<SessionProvider session={session}>
 				<Component {...pageProps} />
 			</SessionProvider>
-			<Script src='https://kit.fontawesome.com/137d032f44.js' crossorigin='anonymous' />
+			<Script src='https://kit.fontawesome.com/aef06a57f1.js' crossorigin='anonymous' />
 		</div>
 	);
 }
